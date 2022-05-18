@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.instagram">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Fapp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="com.app.instagram.screens.InstagramApp">
+        <activity android:name="com.app.instagram.screens.home.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.app.instagram.screens.search.SearchActivity" />
+        <activity android:name="com.app.instagram.screens.share.ShareActivity" />
+        <activity android:name="com.app.instagram.screens.notifications.NotificationsActivity" />
+        <activity android:name="com.app.instagram.screens.profile.ProfileActivity" />
+        <activity android:name="com.app.instagram.screens.editprofile.EditProfileActivity" />
+        <activity
+            android:name="com.app.instagram.screens.login.LoginActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.app.instagram.screens.register.RegisterActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name="com.app.instagram.screens.profilesettings.ProfileSettingsActivity" />
+        <activity android:name="com.app.instagram.screens.addfriends.AddFriendsActivity" />
+        <activity android:name="com.app.instagram.screens.comments.CommentsActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.app.instagram.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
